@@ -78,7 +78,7 @@ async function sendWebhook(url, data) {
 }
 
 async function processAndSendData() {
-  const groupedData = await parseRSSGroupedByDate(RSS_FEED_URL, FILTER.PAST_THREE_DAYS);
+  const groupedData = await parseRSSGroupedByDate(RSS_FEED_URL, FILTER.YESTERDAY);
 //   console.log(groupedData)
   const webhookUrl = 'https://www.taskade.com/webhooks/flow/01HWH5WASC9A7QRVB2DJPFNMKQ'; // 替换为实际的webhook URL
   await sendWebhook(webhookUrl, { data: JSON.stringify(groupedData) });
