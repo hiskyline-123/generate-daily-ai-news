@@ -6,7 +6,9 @@ const processAndSendData = require('../utils/rss-fetch')
 module.exports = async (req, res) => {
   try {
     await processAndSendData(); // 调用你的函数
-    res.status(200).send('Webhook发送成功');
+    const date = new Date();
+    const beijingTime = new Date(date.getTime() + 8 * 60 * 60 * 1000); // 转换为北京时间
+    res.status(200).send(`Webhook发送成功，北京时间：${beijingTime.toISOString()}`);
   } catch (error) {
     console.error('执行过程中发生错误:', error);
     res.status(500).send('执行失败');
