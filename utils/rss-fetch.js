@@ -152,7 +152,7 @@ async function processAndSendData() {
 
     try {
 
-        const groupedData = await parseRSSGroupedByDate(RSS_FEED_URL, FILTER.YESTERDAY);
+        const groupedData = await parseRSSGroupedByDate(RSS_FEED_URL, FILTER.TODAY);
 
         // console.log(groupedData)
 
